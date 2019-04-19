@@ -1,0 +1,13 @@
+<html>
+<head>
+<script src="mult.js"></script>
+<script>
+  Module.onRuntimeInitialized = _ => {
+    const mult = Module.ccall('mult', 'number', ['number', 'number'], [3,20]);
+    console.log(mult);
+  };
+</script>
+</head>
+<body>
+</body>
+</html>

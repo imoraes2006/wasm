@@ -1,0 +1,22 @@
+<html>
+<head>
+<!-- 
+Remember to run this command at emsdk root dir
+source ./emsdk_env.sh --build=Release
+
+The easiest way to load and run your module is to use the generated JavaScript file. Once you load that file, you will have a Module global at your disposal. Use cwrap to create a JavaScript native function that takes care of converting parameters to something C-friendly and invoking the wrapped function. cwrap takes the function name, return type and argument types as arguments, in that order:  -
+ccall() calls a compiled C function with specified parameters and returns the result
+cwrap() “wraps” a compiled C function and returns a JavaScript function you can call normally
+so cwrap is more useful if you plan to call a compiled function multiple times
+-->
+<script src="mult.js"></script>
+<script>
+  Module.onRuntimeInitialized = _ => {
+    const mult1 = Module.cwrap('mult', 'number', ['number', 'number']);
+    console.log(mult1(40,4));
+  };
+</script>
+</head>
+<body>
+</body>
+</html>
