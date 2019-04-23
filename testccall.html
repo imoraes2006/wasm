@@ -1,6 +1,8 @@
 <html>
 <head>
 <script src="mult.js"></script>
+<!-- from escripten docs: Module is a global JavaScript object with attributes that Emscripten-generated code 
+     calls at various points in its execution -->
 <script>
   Module.onRuntimeInitialized = _ => {
     const mult = Module.ccall('mult', 'number', ['number', 'number'], [3,20]);
