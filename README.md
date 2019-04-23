@@ -1,9 +1,9 @@
 # WebAssembly Intro
 
-WebAssembly is an assembly language for a conceptual machine.WebAssembly is a way to run programming languages other than JavaScript on web pages.
+WebAssembly is an assembly language for a conceptual machine. WebAssembly is a way to run programming languages other than JavaScript on web pages.
 
 
-## Setup your dev environment
+## Setup your dev environment (if you want to skip the dev setup see Docker option below)
 
 Install emsdk
 
@@ -19,6 +19,13 @@ Remember to run this command at emsdk ROOT dir for each session (terminal)
 - 03 means optimize aggressively
 - After running the command you should end up with a JavaScript file called mult.js and a WebAssembly file called mult.wasm (Wasm module" contains compiled C code).
 
+## Or use a container for quick setup
+Yes, I'm a fan of Docker.  So if you want to get this demo up and running quickly without the trouble of setting up yet another SDK use Docker.  Install Docker (one time cost) and then use the following  image (from emscripten) to produce js and wasm.  
+
+```docker run --rm -v $(pwd):/src trzeci/emscripten emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap", "ccall"]' mult.c -o mult.js```
+
+You can then test the js and wasm files on your laptop or desktop as shown below.
+
 ## Test it
 
 Load, initialize and run your module by using the generated JavaScript file. Once you load the js file, you will have a Module global to use. 
@@ -32,6 +39,6 @@ cwrap--create a JavaScript native function that takes care of converting paramet
 
 There are two example web pages for testing using ccall and cwrap
 
-On a Mac you can use the following to serve up both these pages. Look at Browser Console to see output.
+On a Mac you can use the following to serve up both these pages. Look at Chrome's Browser Console to see output.  For other platforms, fire up your favorite web server and then test using Chrome or your favorite browser.
 
 ```python -m SimpleHTTPServer 8000```
