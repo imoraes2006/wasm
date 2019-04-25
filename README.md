@@ -32,7 +32,7 @@ You can then test the js and wasm files on your laptop or desktop as shown below
 
 ## Test it
 
-Load, initialize and run your module by using the generated JavaScript file. Once you load the js file, you will have a Module global to use. 
+Now that you have created WASM and js files, it is time to test calling the C function from a web page.  Load, initialize and run your module by using the generated JavaScript file. Once you load the js file, you will have a Module global to use. 
 
 There are two ways to call the native function
 - ccall() calls a compiled C function with specified parameters and returns the result
@@ -41,8 +41,10 @@ so cwrap is more useful if you plan to call a compiled function multiple times
 
 cwrap--create a JavaScript native function that takes care of converting parameters to something C-friendly and invoking the wrapped function. cwrap takes the function name, return type and argument types as arguments in that order:  
 
-There are two example web pages for testing using ccall and cwrap
+There are two example web pages for testing using ccall and cwrap: testccall.html and testcwrap.html
 
-On a Mac you can use the following to serve up both these pages. Look at Chrome's Browser Console to see output.  For other platforms, fire up your favorite web server and then test using Chrome or your favorite browser.
+On a Mac you can use the following to serve up both these pages. Look at Chrome's Browser Console to see output.  
 
 ```python -m SimpleHTTPServer 8000```
+
+For other platforms, fire up your favorite web server and then test using your favorite browser.
