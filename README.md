@@ -1,4 +1,4 @@
-# WebAssembly Intro
+# WebAssembly Introduction
 
 WebAssembly is an assembly language for a conceptual machine. WebAssembly is a way to run programming languages other than JavaScript on web pages.
 
