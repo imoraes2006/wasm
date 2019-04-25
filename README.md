@@ -4,9 +4,9 @@ WebAssembly is an assembly language for a conceptual machine. WebAssembly is a w
 
 
 ## Setup your dev environment 
-### If you want to skip the emscripten dev setup see Docker option below
+### If you want to skip the following emscripten dev setup see Docker option for compilation below
 
-Install emsdk
+Install emsdk: https://emscripten.org/docs/getting_started/downloads.html
 
 Remember to run this command at emsdk ROOT dir for each session (terminal)
 
@@ -17,8 +17,9 @@ Remember to run this command at emsdk ROOT dir for each session (terminal)
 ```emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap", "ccall"]'  -o mult.js  mult.c```
 
 - WASM=1 tells Emscripten to give us a Wasm file instead of an asm.js file
+- EXTRA_EXPORTED_RUNTIME_METHODS tells compiler we want to use ccall and cwrap
 - 03 means optimize aggressively
-- After running the command you should end up with a JavaScript file called mult.js and a WebAssembly file called mult.wasm (Wasm module" contains compiled C code).
+- After running the command you should end up with a JavaScript file called mult.js and a WebAssembly file called mult.wasm (Wasm module contains compiled C code).
 
 ## Docker option for compilation 
 Yes, I'm a fan of Docker.  So if you want to get this demo up and running quickly without the trouble of setting up yet another SDK use Docker.  If you have Docker installed you are good! If not, install Docker (one time cost).  
