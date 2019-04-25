@@ -4,7 +4,7 @@ WebAssembly is an assembly language for a conceptual machine. WebAssembly is a w
 
 
 ## Setup your dev environment 
-### If you want to skip the following emscripten dev setup see Docker option for compilation below
+#### If you want to skip the following emscripten SDK development setup see Docker option for compilation below
 
 Install emsdk: https://emscripten.org/docs/getting_started/downloads.html
 
