@@ -2,6 +2,8 @@
 
 WebAssembly is an assembly language for a conceptual machine. WebAssembly is a way to run programming languages other than JavaScript on web pages.
 
+This is a example of calling a simple C function from a web page.  The C function returns the multiplication of two numbers (I know pretty simple).  The output appears in the browser console. So no need to understand HTML.
+
 
 ## Setup your dev environment 
 #### If you want to skip the following emscripten SDK development setup see Docker option for compilation below
